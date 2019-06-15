@@ -11,4 +11,39 @@
 
 (() => {
     // your code here
+    /* exemple de regex */
+    function validateEmail(email) {
+        let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+    
+    function plus8CaractreAvec2Regex(chaine){
+        let regex1 = /^[a-zA-Z0-9]{8,}$/;
+        
+        let regex2 = /^.*[0-9].*[0-9].*$/;
+
+        return regex1.test(chaine) && regex2.test(chaine);
+
+
+    }
+
+    function plus8CaractreAvec1Regex(chaine){
+        let regex1 = /^[a-zA-Z0-9]{8,}$/;
+        
+        let regex2 = /^.*[0-9].*[0-9].*$/;
+
+        return regex1.test(chaine) && regex2.test(chaine);
+
+
+    }
+
+    password = document.getElementById("pass-one");
+    password.addEventListener("input", () =>{
+        if(plus8CaractreAvec1Regex(password.value)){
+            document.getElementById("validity").textContent = "Ok";
+        }else{
+            document.getElementById("validity").textContent = "Pas ok";
+        }
+    });
+
 })();
