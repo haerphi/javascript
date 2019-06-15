@@ -11,4 +11,33 @@
 
 (() => {
     // your code here
+    function addCharacter(tab, espace = false){
+        
+        let target = document.getElementById("target");
+        let final = target.innerText;
+        if(espace){
+            final += " " + tab[0];
+            espace = false;
+        }else if(tab[0] == " "){
+            espace = true;
+        }else{
+            final += tab[0];
+        }
+
+        tab = tab.substring(1, tab.length);
+        target.innerHTML = final;
+        if(tab.length > 0){
+            setTimeout(function() {
+                addCharacter(tab, espace);
+              }, Math.floor(Math.random() * (1000 - 100 + 1)) + 300);
+        }
+    }
+
+    let target = document.getElementById("target");
+    let targetTab = target.innerText;
+    target.textContent = "";
+
+    setTimeout(function() {
+        addCharacter(targetTab);
+      }, 500);
 })();

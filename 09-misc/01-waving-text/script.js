@@ -11,4 +11,26 @@
 
 (() => {
     // your code here
+    let target = document.getElementById("target");
+    let targetTab = target.innerText.split("");
+    let final = "";
+    let i = 0;
+    let decrease = false;
+    targetTab.forEach(element => {
+        final += "<span style='font-size:" + (10 + i) + "px'>";
+        final += element;
+        final += "</span>";
+        if(i <= 12 && decrease == false){
+            i += 2;
+        }else if(i > 0 && decrease == true){
+            i -= 2;
+        }
+        if(i <= 0){
+            decrease = false;
+        }else if(i >= 12){
+            decrease = true;
+        }
+    });
+    target.innerHTML = final;
+    
 })();
