@@ -27,19 +27,9 @@
 
     }
 
-    function valideInput2(chaine){
-        let regex1 = /^[a-zA-Z0-9]{8,}$/;
-        
-        let regex2 = /^.*[0-9].*[0-9].*$/;
-
-        return regex1.test(chaine) && regex2.test(chaine);
-
-
-    }
-
     password = document.getElementById("pass-one");
     password.addEventListener("input", () =>{
-        if(valideInput2(password.value)){
+        if(valideInput(password.value)){
             document.getElementById("validity").textContent = "Ok";
         }else{
             document.getElementById("validity").textContent = "Pas ok";
