@@ -11,4 +11,25 @@
 
 (() => {
     // your code here
+    //methode 1 - supprimer le caractère 11eme caractère lorsqu'il est encodé
+    function checkInputWithoutMaxlength(id, limit){
+        //est-ce que id.value à moin de caractère que la limite ?
+        if(id.value.length > limit){
+            //si oui, enleve le dernier caractère
+            id.value = id.value.substring(0, id.value.length-1);
+        }
+    }
+
+    password = document.getElementById("pass-one");
+
+    //methode 2 - ajouter l'attribut "maxlength" dans l'input
+    password.setAttribute("maxlength", 10);
+
+    password.addEventListener("input", () =>{
+        //appel pour la methode 1
+        checkInputWithoutMaxlength(password, 10);
+
+        //mise à jour du compteur de caractère
+        document.getElementById("counter").textContent = password.value.length + "/10";
+    });
 })();

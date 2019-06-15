@@ -11,4 +11,19 @@
 
 (() => {
     // your code here
+    function createTableMultiple(row, column){
+        let table = "<table border='1'>";
+        for(let iRow = 0; iRow < row; iRow++){
+            table += "<tr>";
+            for(let iColumn = 0; iColumn < column; iColumn++){
+                table += "<td>" + ((iColumn+1) * (iRow+1)) + "</td>";
+            }
+            table += "</tr>";
+        }
+
+        table += "</table>";
+        return table;
+    }
+
+    document.getElementById("target").innerHTML = createTableMultiple(10, 10);
 })();
