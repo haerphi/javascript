@@ -13,4 +13,16 @@
     const keys = ["name", "species", "age", "gender", "color"];
     const values = ["Skitty", "cat", 9, "female", "tabby"];
     // your code here
+    document.getElementById("run").addEventListener("click", () =>{
+        //création d'une map
+        let map = new Map();
+        //ajout des keys + values dans la map
+        for(let i = 0; i < keys.length; i++){
+            map.set(keys[i], values[i]);
+        }
+        //transformation de la map en objet
+        let obj = Object.fromEntries(map);
+        //affichage
+        console.log(obj);
+    });
 })();

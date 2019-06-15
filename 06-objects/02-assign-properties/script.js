@@ -28,6 +28,20 @@
     };
     // your code here
     document.getElementById("run").addEventListener("click", () =>{
-        
+        //récupération de toute propriété de l'objet defaultProps
+        defaultPropsName = Object.getOwnPropertyNames(defaultProps);
+        //parcours de tout les objets de computers
+        computers.forEach(element => {
+            //parcours de toutes les propriété de default props
+            defaultPropsName.forEach(prop => {
+                //est-ce que l'ordinateur a déjà la propriété ?
+                if(element[prop] == null){
+                    //si elle n'existe pas, on l'ajoute
+                    element[prop] = defaultProps[prop];
+                }
+            });
+        });
+
+        console.log(computers);
     });
 })();

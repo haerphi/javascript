@@ -19,4 +19,10 @@
         status: "married",
     };
     // your code here
+    document.getElementById("run").addEventListener("click", () =>{
+        let personKey = Object.getOwnPropertyNames(person);
+        personKey.forEach(element => {
+            console.log(element + " : " + person[element]);
+        });
+    });
 })();
