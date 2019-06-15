@@ -17,7 +17,7 @@
         return re.test(email);
     }
     
-    function plus8CaractreAvec2Regex(chaine){
+    function valideInput(chaine){
         let regex1 = /^[a-zA-Z0-9]{8,}$/;
         
         let regex2 = /^.*[0-9].*[0-9].*$/;
@@ -27,7 +27,7 @@
 
     }
 
-    function plus8CaractreAvec1Regex(chaine){
+    function valideInput2(chaine){
         let regex1 = /^[a-zA-Z0-9]{8,}$/;
         
         let regex2 = /^.*[0-9].*[0-9].*$/;
@@ -39,7 +39,7 @@
 
     password = document.getElementById("pass-one");
     password.addEventListener("input", () =>{
-        if(plus8CaractreAvec1Regex(password.value)){
+        if(valideInput2(password.value)){
             document.getElementById("validity").textContent = "Ok";
         }else{
             document.getElementById("validity").textContent = "Pas ok";
