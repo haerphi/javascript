@@ -23,4 +23,11 @@
     ]);
 
     // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        if(people.has("Alexandre")){
+            console.log("Yep, Alexandre est là !");
+        }else{
+            console.log("Nop, Alexandre n'est pas là!");
+        }
+    });
 })();

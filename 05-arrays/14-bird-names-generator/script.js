@@ -39,4 +39,22 @@
     ]);
 
     // your code here
+    function randomWithMaxExclude(max){
+        return Math.floor(Math.random() * max)
+    }
+    document.getElementById("run").addEventListener("click", () =>{
+        let determinant = "Le ";
+        //récupération de l'oiseau
+        let bird = birds[randomWithMaxExclude(birds.length)];
+        //récupération de l'adjectif
+        let adjectif = [...adjectives][randomWithMaxExclude(adjectives.size)];
+        //est-ce que l'oiseau est au féminin ?
+        if(bird.fem){
+            determinant = "La ";
+            adjectif += "e";
+        }
+
+        document.getElementById("target").textContent = determinant + bird.name + " " + adjectif;
+    });
+
 })();

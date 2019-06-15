@@ -28,4 +28,12 @@
     ];
 
     // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        fruitsNew = fruits.reduce((acc, item) => {
+            if(!acc.includes(item))
+                acc.push(item);
+            return acc;
+        }, []);
+        console.log(fruitsNew);
+    });
 })();

@@ -11,4 +11,25 @@
 
 (() => {
     // your code here
+    const somme = (tab) =>{
+        let total = 0;
+        tab.forEach(element => {
+            total += element;
+        });
+        return total;
+    };
+
+    document.getElementById("run").addEventListener("click", () =>{
+        let numberTab = [];
+        for(let i = 0; i < 10; i++){
+            let numb = Math.floor(Math.random()*100)+1;
+            numberTab.push(numb);
+            document.getElementById("n-"+(i+1)).textContent = numb;
+        }
+        document.getElementById("min").textContent = Math.min(...numberTab);
+        document.getElementById("max").textContent = Math.max(...numberTab);
+        document.getElementById("sum").textContent = somme(numberTab);
+        document.getElementById("average").textContent = somme(numberTab) / numberTab.length;
+
+    });
 })();
