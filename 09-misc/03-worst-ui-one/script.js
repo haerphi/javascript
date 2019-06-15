@@ -11,4 +11,8 @@
 
 (() => {
     // your code here
+    let slider = document.getElementById("slider");
+    slider.addEventListener("mouseup", () => {
+        document.getElementById("target").textContent = "+" + slider.value;
+    });
 })();
