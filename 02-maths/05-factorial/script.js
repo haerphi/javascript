@@ -12,7 +12,15 @@
 (() => {
     // to get the value of an input: document.getElementById("element-id").value
 
+    const factorial = (entier) =>{
+        if(entier > 1)
+            return entier * factorial(entier-1);
+        else
+            return 1;
+    }
     document.getElementById("run").addEventListener("click", () => {
         // your code here
+        let number = parseInt(document.getElementById("number").value);
+        alert(factorial(number));
     });
 })();

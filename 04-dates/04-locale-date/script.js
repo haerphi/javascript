@@ -12,4 +12,7 @@
 (() => {
     // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
     // your code here
+
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    document.getElementById("target").textContent = new Date().toLocaleDateString('fr-FR', options);
 })();

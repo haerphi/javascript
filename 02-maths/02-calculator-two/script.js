@@ -14,6 +14,26 @@
 
     const performOperation = operation => {
         // perform the operation
+        let element1 = parseInt(document.getElementById("op-one").value);
+        let element2 = parseInt(document.getElementById("op-two").value);
+        switch(operation){
+            case "addition":
+                alert(element1+element2);
+                break;
+            case "substraction":
+                alert(element1-element2);
+                break;
+            case "multiplication":
+                alert(element1*element2);
+                break;
+            case "division":
+                if(element2 != 0) 
+                    alert(element1/element2);
+                else{
+                    alert("L'opérande deux ne peut être égale à 0 pour une division");
+                }
+                break;
+        }
     };
 
     Array.from(document.querySelectorAll("button.operator")).forEach($btn =>

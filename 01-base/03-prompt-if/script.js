@@ -11,4 +11,11 @@
 
 (() => {
     // your code here
+    let rep = prompt("Veux-tu du gâteau ?");
+    rep = rep.toLocaleLowerCase();
+    if(rep == "oui")
+        alert("Gg!");
+    else{
+        alert("Why no ?");
+    }
 })();

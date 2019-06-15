@@ -11,4 +11,6 @@
 
 (() => {
     // your code here
+    var hello = "hello world";
+    alert(hello);
 })();

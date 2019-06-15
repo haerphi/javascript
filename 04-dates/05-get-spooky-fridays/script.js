@@ -11,4 +11,15 @@
 
 (() => {
     // your code here
+    document.getElementById("run").addEventListener("click", () =>{
+        let year = parseInt(document.getElementById("year").value);
+        let friday13 = [];
+        for(let month = 1; month <= 12; month++){
+            let date = new Date(year, month, 13);
+            if(date.getDay() == 5){
+                friday13.push(date);
+            }
+        }
+        alert(friday13);
+    })
 })();

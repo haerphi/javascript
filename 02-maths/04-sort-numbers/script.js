@@ -14,5 +14,13 @@
 
     document.getElementById("run").addEventListener("click", () => {
         // your code here
+        let chaine = document.getElementById("numbers").value;
+        let tabNumber = chaine.split(',');
+        for(let i = 0; i < tabNumber.length; i++){
+            tabNumber[i] = parseInt(tabNumber[i]);
+        }
+
+        tabNumber.sort((a, b) => (a - b));
+        alert(tabNumber);
     });
 })();

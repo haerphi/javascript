@@ -24,4 +24,11 @@
     ];
 
     // your code here
+    document.getElementById("run").addEventListener("click", () =>{
+        fruits.shift(); //supp premiere element
+        fruits.pop(); //supp derniere element
+        fruits.unshift("banane"); //ajoute en premiere place
+        fruits.push("kiwi"); //ajouter à la fin
+        alert(fruits);
+    });
 })();

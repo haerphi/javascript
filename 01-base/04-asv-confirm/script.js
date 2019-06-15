@@ -11,4 +11,12 @@
 
 (() => {
     // your code here
+    let rep = "";
+    do{
+        let age = prompt("Age ?");
+        let genre = prompt("Genre ?");
+        let ville = prompt("Ville ?");
+        rep = prompt(age + " ? " + genre + " ? " + ville  + " ? ");
+        rep = rep.toLowerCase();
+    }while(rep != "ok");
 })();
