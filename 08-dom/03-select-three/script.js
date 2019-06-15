@@ -11,4 +11,7 @@
 
 (() => {
     // your code here
+    Array.from(document.querySelectorAll(".target")).forEach($target => {
+        $target.textContent = "owned";
+    });
 })();
