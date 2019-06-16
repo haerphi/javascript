@@ -11,4 +11,18 @@
 
 (() => {
     // your code here
+    let i = 0;
+    if(localStorage.getItem("compteurLocal") != null){
+        i = parseInt(localStorage.getItem("compteurLocal"));
+    }
+    document.getElementById("target").textContent = i;
+    
+    document.getElementById("increment").addEventListener("click", () => {
+        if(localStorage.getItem("compteurLocal") != null){
+           console.log("nop");
+        }
+        i ++;
+        document.getElementById("target").textContent = i;
+        localStorage.setItem("compteurLocal", ""+i);
+    });
 })();
