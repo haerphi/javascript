@@ -15,11 +15,18 @@
             this.name = name;
             this.age = age;
         }
+
+        identite(){
+
+        }
     }
     // your code here
     document.getElementById("run").addEventListener("click", () =>{
         let catSkitty = new Cat("Skitty", 9);
         let catPixel = new Cat("Pixel", 6);
+        
+        catPixel.identite();
+
         console.log(catSkitty);
         console.log(catPixel);
     });

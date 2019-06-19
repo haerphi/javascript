@@ -11,16 +11,7 @@
 
 (() => {
     // your code here
-    function add1ToValueOfId(id){
-        let target = document.getElementById(id);
-        let temp = parseInt(target.value)+1;
-        if((temp+"").length == 1){
-            target.textContent = "0"+ temp;
-        }else{
-            target.textContent = temp;
-        }
-    }
-
+    //methode 1
     function changeTarget(element){
         let temp = parseInt(element.value)+1;
         if(temp > parseInt(element.dataset.max)){
@@ -60,47 +51,17 @@
         {
             name:"part-four",
             defilement : true
-        }];
+    }];
 
-        let stop1 = document.getElementById("fix-part-one");
-        stop1.addEventListener("click", () =>{
-           idTab.forEach((element) => {
-               if(element.name == "part-one"){
-                   element.defilement = false;
-                   return false;
-               }
-           }); 
+    idTab.forEach(element => {
+        document.getElementById("fix-"+element.name).addEventListener("click", () =>{
+            if(element.defilement){
+                element.defilement = false;
+            }else{
+                element.defilement = true;
+            }
         });
-
-        let stop2 = document.getElementById("fix-part-two");
-        stop2.addEventListener("click", () =>{
-           idTab.forEach((element) => {
-               if(element.name == "part-two"){
-                   element.defilement = false;
-                   return false;
-               }
-           }); 
-        });
-
-        let stop3 = document.getElementById("fix-part-three");
-        stop3.addEventListener("click", () =>{
-           idTab.forEach((element) => {
-               if(element.name == "part-three"){
-                   element.defilement = false;
-                   return false;
-               }
-           }); 
-        });
-
-        let stop4 = document.getElementById("fix-part-four");
-        stop4.addEventListener("click", () =>{
-           idTab.forEach((element) => {
-               if(element.name == "part-four"){
-                   element.defilement = false;
-                   return false;
-               }
-           }); 
-        });
+    });
 
     setTimeout(function(){
         allTarget(idTab);
