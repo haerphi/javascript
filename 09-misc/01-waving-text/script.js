@@ -38,33 +38,42 @@
         }
     });
     target.innerHTML = final;
-
+/*
     //animation
-    function changeSize(first){
+    function changeSize(first, numb = 0){
         let spanTab = document.getElementsByClassName("vague");
-        for(let i = spanTab.length-1; i > 0; i--){
+        for(let i = 0; i < spanTab.length; i++){
             if(first){
-                spanTab[i].dataset.decrease = false; //pour la première fois que l'animation est lancée
-            }
-            let size = parseInt(spanTab[i].style.fontSize.substring(0, spanTab[i].style.fontSize.length-2));
-            if(size <= minSize && spanTab[i].dataset.decrease == "true"){ // vérifie si la taille actuel ne dépasse pas la taille max
                 spanTab[i].dataset.decrease = "false";
-            }else if(size >= maxSize && spanTab[i].dataset.decrease == "false"){ // vérifie si la taille actuel ne dépasse pas la taille minimal
-                spanTab[i].dataset.decrease = "true";
             }
-            console.log(spanTab[i].dataset.decrease);
 
-            if(spanTab[i].dataset.decrease == "true"){ //modification de la taille
-                console.log(size + " - => " + (size-diffSize)+"px");
-                spanTab[i].style.fontSize = (size-diffSize)+"px";
+            let size = parseInt(spanTab[i].style.fontSize.substring(0, spanTab[i].style.fontSize.length-1));
+            if(i == 0)
+                console.log("A " + size);
+            if(i == 1)
+            console.log("B " + size);
+            
+
+            if(spanTab[i].dataset.decrease == "true"){
+                size -= diffSize;
+                if(size <= minSize){
+                    spanTab[i].dataset.decrease = "false";
+                }
+
             }else{
-                console.log(size + " + => " + (size+diffSize)+"px");
-                spanTab[i].style.fontSize = (size+diffSize)+"px";
+                size += diffSize;
+                if(size >= maxSize){
+                    spanTab[i].dataset.decrease = "true";
+                }
             }
+            spanTab[i].style.fontSize = size + "px";
+            
         }
-            //setTimeout(() => changeSize(false), 1000);
+        if(numb < 12)
+            setTimeout(() => changeSize(false, numb+1), 1000);
     }
 
-    //changeSize(true);
+    changeSize(true);
+    */
     
 })();

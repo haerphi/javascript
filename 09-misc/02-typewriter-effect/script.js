@@ -40,4 +40,6 @@
     setTimeout(function() {
         addCharacter(targetTab);
       }, 500);
+
+
 })();
