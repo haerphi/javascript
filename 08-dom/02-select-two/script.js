@@ -11,11 +11,6 @@
 
 (() => {
     // your code here
-    let pTags = document.getElementsByTagName("p");
-    console.log(pTags);
-    for(let i = 0; i < pTags.length; i++){
-        if(pTags[i].className == "target"){
-            pTags[i].textContent = "owned";
-        }
-    }
+    document.querySelector(".target").textContent = "owner";
+
 })();

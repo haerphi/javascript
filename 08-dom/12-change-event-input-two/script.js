@@ -22,7 +22,10 @@
         
         let regex2 = /.*[0-9].*[0-9].*/;
 
-        return regex1.test(chaine) && regex2.test(chaine);
+        let reg = /^(?=.*?.*\d.*\d.*).{8,}$/;
+
+        //return regex1.test(chaine) && regex2.test(chaine);
+        return reg.test(chaine);
 
 
     }

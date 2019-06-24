@@ -25,5 +25,19 @@
         return table;
     }
 
-    document.getElementById("target").innerHTML = createTable(10, 10);
+    function creeTableau(id, ligne, colonne){
+        let tableau = document.getElementById(id);
+        for(iLigne = 0; iLigne < ligne; iLigne++){
+        let nouvelle = tableau.insertRow(-1);
+        
+            for(iColonne = 0; iColonne < colonne; iColonne++){
+                let cellule = nouvelle.insertCell(-1);
+                cellule.textContent = iColonne + " ; " + iLigne;
+            }
+        }
+    }
+    document.getElementById("target").innerHTML =" <table id='tableauId' border='1'> </table>";
+    creeTableau("tableauId", 10, 1);
+
+    //document.getElementById("target").innerHTML = createTable(10, 10);
 })();

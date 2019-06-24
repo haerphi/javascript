@@ -13,5 +13,8 @@
     // your code here
     //récupération de data-image
     let data = document.getElementById("source").dataset.image;
-    document.getElementById("target").innerHTML = "<img src='" + data + "' alt='image aléatoire du chaton'>";
+    document.getElementById("target").innerHTML = `<img src='${data}' alt='image aléatoire du chaton'>`;
+    let del = document.getElementById("source");
+    let parent = document.querySelector(".material");
+    parent.removeChild(del);
 })();
