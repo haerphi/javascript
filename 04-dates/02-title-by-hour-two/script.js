@@ -13,11 +13,23 @@
     // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
     // your code here
     let date = new Date();
+    /*
     if(date.getHours < 17){
         document.getElementById("target").textContent = "bonjour";
     }else if(date.getHours == 17 && date.getMinutes >= 30){
         document.getElementById("target").textContent = "bonsoir";
     }else{
         document.getElementById("target").textContent = "bonsoir";
+    }*/
+
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let total = hours * 100 + minutes;
+
+    if(total <= 1730){
+        document.getElementById("target").textContent = "bonjour";
+    }else{
+        document.getElementById("target").textContent = "bonsoir";
     }
+
 })();

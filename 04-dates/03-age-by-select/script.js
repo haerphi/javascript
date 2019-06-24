@@ -13,15 +13,16 @@
     // your code here
     function age(birthday){
         let difference = Date.now() - birthday;
-        console.log(difference / (1000 * 3600 * 24 * 365));
+
         return Math.floor(difference / (1000 * 3600 * 24 * 365));
     }
+
     document.getElementById("run").addEventListener("click", () => {
         let day = parseInt(document.getElementById("dob-day").value);
         let month = parseInt(document.getElementById("dob-month").value);
         let year = parseInt(document.getElementById("dob-year").value);
         let birthday = new Date(year + "-" + month + "-" + day);
-        alert(age(birthday));
+        alert(age(birthday)+"ans");
         
     });
 })();

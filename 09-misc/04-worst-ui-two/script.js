@@ -25,7 +25,8 @@
         document.getElementById("target").textContent = "+" + document.getElementById("part-one").innerText + document.getElementById("part-two").innerText + document.getElementById("part-three").innerText + document.getElementById("part-four").innerText
     }
 
-
+    //Complet
+    /*
     document.getElementById("part-one").addEventListener("click", () => {
         changeTarget(document.getElementById("part-one"));
     });
@@ -37,5 +38,13 @@
     });
     document.getElementById("part-four").addEventListener("click", () => {
         changeTarget(document.getElementById("part-four"));
+    });
+    */
+    //abreger
+    let tab = ["one", "two", "three", "four"];
+    tab.forEach(element => {
+        document.getElementById("part-"+element).addEventListener("click", () => {
+            changeTarget(document.getElementById("part-"+element));
+        });
     });
 })();

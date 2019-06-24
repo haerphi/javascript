@@ -29,11 +29,16 @@
 
     // your code here
     document.getElementById("run").addEventListener("click", () => {
-        fruitsNew = fruits.reduce((acc, item) => {
+        //methode 1
+        const fruitsNew = fruits.reduce((acc, item) => {
             if(!acc.includes(item))
                 acc.push(item);
             return acc;
         }, []);
         console.log(fruitsNew);
+
+        //methode 2
+        const fruitsNew2 = Array.from(new Set(fruits));
+        console.log(fruitsNew2)
     });
 })();

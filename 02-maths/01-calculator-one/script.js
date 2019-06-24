@@ -12,6 +12,9 @@
 (() => {
     // to get the value of an input: document.getElementById("element-id").value
 
+
+    //is nan
+
     document.getElementById("addition").addEventListener("click", () => {
         // perform an addition
         let element1 = parseInt(document.getElementById("op-one").value);

@@ -16,11 +16,12 @@
             this.firstname = firstname;
             this.lastname = lastname;
         }
-
+        
         sayHello(){
-            console.log("Hello, "+this.firstname + " " + this.lastname + "!");
+           return `Hello, ${this.firstname} ${this.lastname} !`;
         }
     }
+    
     document.getElementById("run").addEventListener("click", () =>{
         let moi = new Person("Philippe", "Haerens");
         console.log(moi.sayHello());

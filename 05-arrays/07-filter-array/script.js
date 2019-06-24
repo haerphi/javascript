@@ -10,16 +10,6 @@
 // You will have time to focus on it later.
 
 (() => {
-    const ageLimit = (tab, limit) =>{
-        let newTab = [];
-        tab.forEach(element => {
-            if(element.age > limit){
-                newTab.push(element);
-            }
-        });
-        return newTab;
-    };
-
     const people = [
         {
             firstname: "Dreddy",
@@ -99,7 +89,26 @@
     ];
 
     // your code here
+    const ageLimit = (tab, limit) =>{
+        let newTab = [];
+        tab.forEach(element => {
+            if(element.age > limit){
+                newTab.push(element);
+            }
+        });
+        return newTab;
+    };
+
     document.getElementById("run").addEventListener("click", () =>{
         console.log(ageLimit(people, 18));
+
+
+        let ppl18 = people.filter((item) => {
+            if(item.age > 18){
+                return true;
+            }
+        });
+
+        console.log(ppl18);
     });
 })();

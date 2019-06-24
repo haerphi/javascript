@@ -28,6 +28,8 @@
     };
     // your code here
     document.getElementById("run").addEventListener("click", () =>{
+        /*
+        //Methode 1
         //récupération de toute propriété de l'objet defaultProps
         defaultPropsName = Object.getOwnPropertyNames(defaultProps);
         //parcours de tout les objets de computers
@@ -41,7 +43,12 @@
                 }
             });
         });
-
+        */
         console.log(computers);
+
+        //methode 2
+        const cleanedComputers = computers.map((cmp) => Object.assign({}, defaultProps, cmp));
+
+        console.log(cleanedComputers);
     });
 })();

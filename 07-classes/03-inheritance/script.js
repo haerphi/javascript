@@ -19,17 +19,18 @@
         constructor(name) {
             super();
             this.name = name;
-            this.constructor.greeting = "Miou";
         }
     }
+    Cat.greeting = "Miou";
 
     class Dog extends Animal{
         constructor(name) {
             super();
             this.name = name;
-            this.constructor.greeting = "Wouf";
         }
     }
+    Dog.greeting = "Wouf";
+    
     // your code here
     document.getElementById("run").addEventListener("click", () =>{
         let myCat = new Cat("Pixel");

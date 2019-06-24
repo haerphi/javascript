@@ -32,6 +32,7 @@
             if(element == "pomme"){
                 console.log("pomme trouvée avec boucle FOR !");
             }
+            //return false;
         });
 
         //methode 2: Array.indexOf();

@@ -21,5 +21,13 @@
             }
         }
         alert(friday13);
+
+
+        let lst = new Array();
+        console.log(lst);
+        lst = 9;
+        lest = 8;
+        console.log(lst);
+        
     })
 })();
