@@ -11,35 +11,37 @@
 
 (() => {
     // your code here
-    function addCharacter(tab, espace = false){
-        
+    function addCharacter(){
+        //récupération du texte déjà (re-)écris
         let target = document.getElementById("target");
         let final = target.innerText;
+        //est-ce qu'il faut rajouter un espace ? Cette condition n'a pas de sens à la première itération
         if(espace){
-            final += " " + tab[0];
+            final += " ";
             espace = false;
-        }else if(tab[0] == " "){
-            espace = true;
-        }else{
-            final += tab[0];
         }
-
-        tab = tab.substring(1, tab.length);
+        //Si le caractère actuel est un espace, espace = true donc prochaine itération on rajoute un espace
+        if(tab[0] === " "){
+            espace = true;
+        }
+        //rajout du caractère actuel
+        final += tab[0];
+        //écriture de la nouvelle "partie" du texte
         target.innerHTML = final;
-        if(tab.length > 0){
-            setTimeout(function() {
-                addCharacter(tab, espace);
-              }, Math.floor(Math.random() * (1000 - 100 + 1)) + 300);
+        //on retire le caractère que l'on vient d'écrire de la chaine.
+        tab = tab.substring(1, tab.length);
+        //s'il n'y a plus de caractère à afficher, on arrête la "boucle"
+        if(tab.length <= 0){
+            console.log("yep");
+            clearInterval(interval);
         }
     }
 
     let target = document.getElementById("target");
-    let targetTab = target.innerText;
+    var tab = target.innerText;
     target.textContent = "";
-
-    setTimeout(function() {
-        addCharacter(targetTab);
-      }, 500);
+    var espace = false;
+    var interval = setInterval(() => addCharacter(), 500);
 
 
 })();

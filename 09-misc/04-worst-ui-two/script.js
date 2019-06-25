@@ -12,17 +12,15 @@
 (() => {
     // your code here
     function changeTarget(element){
-        let temp = parseInt(element.innerText);
+        let temp = +element.innerText;
         temp += 1;
-        if(temp > parseInt(element.dataset.max)){
-            element.textContent = element.dataset.min;
-        }else{
-            element.textContent = temp;
-            if(element.innerText.length == 1){
-                element.textContent = "0"+element.innerText;
-            }
+        if(temp > parseFloat(element.dataset.max)){
+            element.innerText = element.dataset.min;
         }
-        document.getElementById("target").textContent = "+" + document.getElementById("part-one").innerText + document.getElementById("part-two").innerText + document.getElementById("part-three").innerText + document.getElementById("part-four").innerText
+
+        element.innerText = `${temp}`.padStart(2, "0"); /* s'il y a moin de 2elements, rajoute un 0*/
+
+        document.getElementById("target").innerText = "+" + document.getElementById("part-one").innerText + document.getElementById("part-two").innerText + document.getElementById("part-three").innerText + document.getElementById("part-four").innerText
     }
 
     //Complet
@@ -45,6 +43,7 @@
     tab.forEach(element => {
         document.getElementById("part-"+element).addEventListener("click", () => {
             changeTarget(document.getElementById("part-"+element));
+            
         });
     });
 })();
