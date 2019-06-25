@@ -18,11 +18,8 @@
     document.getElementById("target").textContent = i;
     
     document.getElementById("increment").addEventListener("click", () => {
-        if(localStorage.getItem("compteurLocal") != null){
-           console.log("nop");
-        }
         i ++;
         document.getElementById("target").textContent = i;
-        localStorage.setItem("compteurLocal", ""+i);
+        localStorage.setItem("compteurLocal", i);
     });
 })();
