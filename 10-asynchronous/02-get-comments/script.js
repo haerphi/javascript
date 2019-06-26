@@ -15,7 +15,7 @@
         window.lib.getPosts((error, articles) => {
             console.log(articles);
             articles.forEach(element => {
-                window.lib.getComments(element, (error, tabComment) => {
+                window.lib.getComments(element.id, (error, tabComment) => {
                     element.comments = tabComment;
                 });
             });

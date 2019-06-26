@@ -14,6 +14,7 @@
     document.getElementById("run").addEventListener("click", () => {
         window.lib.getPersons((error, tab) => {
             console.log(error);
+            console.log(tab);
         });
     });
 })();

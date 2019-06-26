@@ -11,4 +11,12 @@
 
 (() => {
     // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        let promess = window.lib.getPersons();
+        promess.then((something) => {
+           console.log(something);
+        }).catch((error) => {
+            console.log(error);
+        });
+    });
 })();

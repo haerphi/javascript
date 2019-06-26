@@ -11,13 +11,15 @@
 
 (() => {
     // your code here
-    let post = window.lib.getPosts();
+    document.getElementById("run").addEventListener("click", () => {
+        let post = window.lib.getPosts();
 
-    post.then(function(value) {
-        console.log(articles);
-        articles.forEach(element => {
-            window.lib.getComments(element, (error, tabComment) => {
-                element.comments = tabComment;
+        post.then(function(value) {
+            console.log(value);
+            value.forEach(element => {
+                window.lib.getComments(element.id, (error, tabComment) => {
+                    element.comments = tabComment;
+                });
             });
         });
     });

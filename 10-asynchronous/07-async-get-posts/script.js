@@ -11,4 +11,6 @@
 
 (() => {
     // your code here
+    let promPosts = await window.lib.getPosts();
+    
 })();
