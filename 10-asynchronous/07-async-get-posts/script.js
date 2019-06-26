@@ -11,6 +11,12 @@
 
 (() => {
     // your code here
-    let promPosts = await window.lib.getPosts();
-    
+    document.getElementById("run").addEventListener("click", () => {
+
+        async function asyncCall(){
+            let post = await window.lib.getPosts();
+            console.log(post);
+        }
+        asyncCall();
+    });
 })();
