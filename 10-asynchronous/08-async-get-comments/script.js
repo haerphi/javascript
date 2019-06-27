@@ -12,15 +12,21 @@
 (() => {
     // your code here
     document.getElementById("run").addEventListener("click", () => {
-        async function coms(element, postId) {
-        let table = await window.lib.getComments(postId);
-            element.comments = table;
+        //créer une fontion async pour récupérer les commentaires
+        async function coms(element) {
+            //récuparation des commentaires
+            let commentsTab = await window.lib.getComments(element.id);
+            //attribution des commentaires
+            element.comments = commentsTab;
         }
         
+        //créer une fontion async pour récupérer les posts
         async function posts() {
+            //Récupération des posts
             let result = await window.lib.getPosts();
+            //boucle sur tout les posts pour ajouter les commentaires
             result.forEach(element => {
-                coms(element, element.id);
+                coms(element);
                 console.log(element);
             });
         }
