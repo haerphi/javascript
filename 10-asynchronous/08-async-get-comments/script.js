@@ -12,24 +12,25 @@
 (() => {
     // your code here
     document.getElementById("run").addEventListener("click", () => {
-        //créer une fontion async pour récupérer les commentaires
-        async function coms(element) {
-            //récuparation des commentaires
-            let commentsTab = await window.lib.getComments(element.id);
-            //attribution des commentaires
-            element.comments = commentsTab;
-        }
-        
         //créer une fontion async pour récupérer les posts
         async function posts() {
             //Récupération des posts
             let result = await window.lib.getPosts();
             //boucle sur tout les posts pour ajouter les commentaires
             result.forEach(element => {
-                coms(element);
+                commentaire(element);
                 console.log(element);
             });
         }
+
+        //créer une fontion async pour récupérer les commentaires
+        async function commentaire(element) {
+            //récuparation des commentaires
+            let commentsTab = await window.lib.getComments(element.id);
+            //attribution des commentaires
+            element.comments = commentsTab;
+        }
+
         posts();
     });
 })();
